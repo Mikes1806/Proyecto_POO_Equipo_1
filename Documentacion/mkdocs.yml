@@ -1,0 +1,73 @@
+site_name: Programación orientada a objetos / Fes Acatlan UNAM
+site_url: https://example.com/
+
+extra_javascript: 
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Equipo N :  
+    - Planteamiento del Problema: Equipo_N/Planteamiento.md
+    - Desarrollo del Problema: Equipo_N/Desarrollo.md
+  - Equipo Landa :
+    - Introduccion del Problema: Equipo_Landa/Introduccion.md
+    - Planteamiento del Problema: Equipo_Landa/Desarrollo.md
+    - Coclusion del Problema: Equipo_Landa/Conclusion.md  
+theme:
+  scheme: default
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
+    - toc.integrate  
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
+
+plugins:  
+  - search
+  - awesome-pages
+  - git-authors:
+     show_contribution: true
+     show_line_count: true
+     count_empty_lines: true
+     fallback_to_empty: false
+     enabled: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - pymdownx.arithmatex:
+      generic: true  
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
