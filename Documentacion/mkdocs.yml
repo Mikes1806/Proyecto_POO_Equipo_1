@@ -11,13 +11,13 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Equipo N :  
-    - Planteamiento del Problema: Equipo_N/Planteamiento.md
-    - Desarrollo del Problema: Equipo_N/Desarrollo.md
-  - Equipo Landa :
-    - Introduccion del Problema: Equipo_Landa/Introduccion.md
-    - Planteamiento del Problema: Equipo_Landa/Desarrollo.md
-    - Coclusion del Problema: Equipo_Landa/Conclusion.md  
+  - EJEMPLO:
+    - Introduccion del Problema: EJEMPLO/Introduccion.md
+    - Planteamiento del Problema: EJEMPLO/Desarrollo.md
+    - Conclusion del Problema: EJEMPLO/Conclusion.md
+
+  - Equipo 1:
+    - Prueba: Equipo_1/Prueba.md   
 theme:
   scheme: default
   name: material
