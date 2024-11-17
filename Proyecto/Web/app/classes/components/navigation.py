@@ -6,7 +6,6 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 from ..logics.gestor_contactos import GestorContactos
-from ..logics.ejemplo_base_datos import EjemploBaseDatos
 
 
 class Navigation:
@@ -17,7 +16,6 @@ class Navigation:
         self._menu_handlers = {
             "Inicio": self._handle_inicio,
             "Gestion Contactos": self._handle_gestion_de_contactos,
-            "Ejemplo Base Datos": self._handle_ejemplo_base_datos,
             "Cerrar sesión": self.logout,
         }
 
@@ -31,7 +29,6 @@ class Navigation:
                 self._options,
                 icons=[
                     "house",
-                    "gear",
                     "gear",
                     "box-arrow-left",
                 ],
@@ -51,9 +48,6 @@ class Navigation:
         st.title("Gestion De Contactos")
         with st.spinner("Wait for it..."):
             GestorContactos().logic()
-
-    def _handle_ejemplo_base_datos(self):
-        EjemploBaseDatos().logic()
 
     def logout(self):
         st.session_state["logged_in"] = False

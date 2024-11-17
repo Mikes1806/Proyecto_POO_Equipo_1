@@ -1,41 +1,13 @@
 version: '3.7'
+
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: streamlit run app/main.py --server.port 8501
-    volumes:
-      - './:/usr/src/app'
-    ports:
-      - '8501:8501'
-    image: 'yourstreamlitapp:latest'
-    networks:
-      - streamlit-net
-
-  postgres:
-    image: postgres:10
-    ports:
-      - 5432:5432/tcp
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    volumes:
-      - /home/josue/Documentos/GitRepos/Materia_POO_1355/development/web/app/classes/logics/data/info:/home/data
-      - /home/josue/Documentos/GitRepos/Materia_POO_1355/development/web/app/classes/logics/data/info/creacion_tablas.sql:/docker-entrypoint-initdb.d/init.sql
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "info"]
-      interval: 5s
-      retries: 5
-    restart: always
-    networks:
-      - streamlit-net
-    deploy:
-      restart_policy:
-        condition: on-failure
-
-networks:
-  streamlit-net:
-
-
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: streamlit run app/main.py --server.port 8501
+        volumes:
+            - ./:/usr/src/app
+        ports:
+            - 8501:8501
+        image: yourstreamlitapp:latest

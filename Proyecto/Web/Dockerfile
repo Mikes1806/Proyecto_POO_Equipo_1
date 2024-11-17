@@ -12,7 +12,6 @@ COPY ./requirements.txt /usr/src/app/requirements.txt
 # dependencies
 RUN pip install --upgrade pip setuptools wheel \
     && pip install -r requirements.txt \
-    && rm -rf /root/.cache/pip \
-    && pip3 install psycopg2-binary
+    && rm -rf /root/.cache/pip
 
 COPY ./ /usr/src/app
