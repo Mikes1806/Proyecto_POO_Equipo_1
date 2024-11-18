@@ -80,6 +80,3 @@ class Gestorperfil:
 
  def _modify_row(self, df_mi_perfil):
     pass
-   
-
-    
