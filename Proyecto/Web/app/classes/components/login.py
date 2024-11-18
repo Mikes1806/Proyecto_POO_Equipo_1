@@ -5,7 +5,7 @@ class Login:
     def __init__(self, username, password) -> None:
         self._username = username
         self._password = password
-        self._users = {"Landa": "123"}
+        self._users = {"u": "1"}
 
     def validation_credentials(
         self,
