@@ -85,7 +85,7 @@ class Gestorperfil:
                 
 
  def _add_row(self, df_mi_perfil):
-    st.write("Nombre", df_mi_perfil ['nombre_user'][0])
+    st.write("Nombre ", df_mi_perfil ['nombre_user'][0])
     st.write("ID del usuario", df_mi_perfil ['ID_user'][0])
     st.write("Monto mensual", df_mi_perfil ['monto_mensual'][0])
     st.write("Edad", df_mi_perfil ['edad'][0])
