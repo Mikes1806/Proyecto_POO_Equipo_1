@@ -6,7 +6,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 from ..logics.gestor_perfil import Gestorperfil
-from ..logics.gestor_contactos import GestorContactos
+from ..logics.gastos_fijos import Gestor_gastos_fijos
 
 
 class Navigation:
@@ -15,7 +15,7 @@ class Navigation:
 
         self._menu_handlers = {
             "Mi perfil": self._handle_Gestion_de_perfil,
-            "Gestion ingresos fijos": self._handle_gestion_de_contactos,
+            "Gastos fijos": self._handle_Gastos_fijos,
             "Cerrar sesión": self.logout,
         }
 
@@ -28,11 +28,11 @@ class Navigation:
                 "Main Menu",
                 self._options,
                 icons=[
-                    "house",
-                    "gear",
+                    "person-circle",
+                    "bag-fill",
                     "box-arrow-left",
                 ],
-                menu_icon="cast",
+                menu_icon="brilliance",
                 default_index=0,
             )
 
@@ -46,10 +46,10 @@ class Navigation:
             Gestorperfil().logic()
 
 
-    def _handle_gestion_de_contactos(self):
-        st.title("Gestion De Contactos")
+    def _handle_Gastos_fijos(self):
+        st.title("Gastos fijos")
         with st.spinner("Wait for it..."):
-            GestorContactos().logic()
+            Gestor_gastos_fijos().logic()
 
 
     def logout(self):
