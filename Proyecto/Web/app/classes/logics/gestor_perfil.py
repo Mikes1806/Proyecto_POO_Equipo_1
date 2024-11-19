@@ -31,7 +31,7 @@ class Gestorperfil:
               tab_mostrar_pefil, tab_modificacion_perfil = st.tabs(["Mi informacion", "Modificacion de informacion"])
 
               with tab_mostrar_pefil:
-                self._add_row(df_mi_pefil)
+                self._displey_perfil(df_mi_pefil)
               with tab_modificacion_perfil:
                 self._modify_row(df_mi_pefil)
 
@@ -83,14 +83,113 @@ class Gestorperfil:
             time.sleep(5)
             st.experimental_rerun()
                 
+ def _eliminar_perfil(self, df_mi_perfil):
+    csv_file = '/usr/src/app/app/classes/logics/data/mi_perfil.csv'
+    selected_index = 0
+    df_mi_perfil = df_mi_perfil.drop(selected_index).reset_index(drop=True)
+    df_mi_perfil.to_csv(csv_file, index=False)    
+    st.success("Registro agregado exitosamente.")
+    time.sleep(5)
+    st.experimental_rerun()
 
- def _add_row(self, df_mi_perfil):
-    st.write("Nombre ", df_mi_perfil ['nombre_user'][0])
-    st.write("ID del usuario", df_mi_perfil ['ID_user'][0])
-    st.write("Monto mensual", df_mi_perfil ['monto_mensual'][0])
-    st.write("Edad", df_mi_perfil ['edad'][0])
-    st.write("Numero telefonico", df_mi_perfil ['telefono'][0])
-    st.write("Corre electronico", df_mi_perfil ['correo_electronico'][0])  
+
+
+ def _displey_perfil(self, df_mi_perfil):
+   
+   nombre_user = df_mi_perfil ['nombre_user'][0]
+   iD_user = df_mi_perfil ['ID_user'][0]
+   monto_mensual = df_mi_perfil ['monto_mensual'][0]
+   edad_seleccionada = df_mi_perfil ['edad'][0]
+   numero_telefono = df_mi_perfil ['telefono'][0]
+   correo_electronico = df_mi_perfil ['correo_electronico'][0]
+   
+   st.write("Nombre del usuario")
+   st.markdown(
+       f"""
+       <div style="
+          border: 2px solid white; 
+          border-radius: 10px; 
+          padding: 2px; 
+          background-color: #151516;">
+          <p style='color: white;'>  {nombre_user}</p>
+       </div>
+       """,
+       unsafe_allow_html=True
+    )
+   st.write("") 
+   st.write("ID del usuario")
+   st.markdown(
+       f"""
+       <div style="
+          border: 2px solid white; 
+          border-radius: 10px; 
+          padding: 2px; 
+          background-color: #151516;">
+          <p style='color: white;'>  {iD_user}</p>
+       </div>
+       """,
+       unsafe_allow_html=True
+    )
+   st.write("") 
+   st.write("Monto mensual ")
+   st.markdown(
+       f"""
+       <div style="
+          border: 2px solid white; 
+          border-radius: 10px; 
+          padding: 2px; 
+          background-color: #151516;">
+          <p style='color: white;'>  {monto_mensual }</p>
+       </div>
+       """,
+       unsafe_allow_html=True
+    )
+   st.write("") 
+   st.write("Edad")
+   st.markdown(
+       f"""
+       <div style="
+          border: 2px solid white; 
+          border-radius: 10px; 
+          padding: 2px;
+          background-color: #151516;">
+          <p style='color: white;'>  {edad_seleccionada}</p>
+       </div>
+       """,
+       unsafe_allow_html=True
+    )
+   st.write("") 
+   st.write("Numero de telefono")
+   st.markdown(
+       f"""
+       <div style="
+          border: 2px solid white; 
+          border-radius: 10px; 
+          padding: 2px;
+          background-color: #151516;">
+          <p style='color: white;'>  {numero_telefono}</p>
+       </div>
+       """,
+       unsafe_allow_html=True
+    )
+   st.write("") 
+   st.write("Correo electronico")
+   st.markdown(
+       f"""
+       <div style="
+          border: 2px solid white; 
+          border-radius: 10px; 
+          padding: 2px;
+          background-color: #151516;">
+          <p style='color: white;'>  {correo_electronico}</p>
+       </div>
+       """,
+       unsafe_allow_html=True
+    )
+   st.write("") 
+   if st.button('Eliminar fila'):
+       self._eliminar_perfil(df_mi_perfil)
+    
 
  def _modify_row(self, df_mi_perfil):
 
@@ -161,3 +260,6 @@ class Gestorperfil:
                     st.experimental_rerun()
         else:
             st.error("No hay registros disponibles para modificar.")
+
+
+
