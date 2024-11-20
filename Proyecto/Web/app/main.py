@@ -2,7 +2,6 @@ import streamlit as st
 from classes.components.login import Login
 from classes.components.navigation import Navigation
 
-
 class App:
     def show_page(self):
 
