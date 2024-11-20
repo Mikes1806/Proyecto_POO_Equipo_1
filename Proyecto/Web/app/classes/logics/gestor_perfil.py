@@ -88,7 +88,7 @@ class Gestorperfil:
     selected_index = 0
     df_mi_perfil = df_mi_perfil.drop(selected_index).reset_index(drop=True)
     df_mi_perfil.to_csv(csv_file, index=False)    
-    st.success("Registro agregado exitosamente.")
+    st.success("Perfil eliminado exitosamente.")
     time.sleep(5)
     st.experimental_rerun()
 

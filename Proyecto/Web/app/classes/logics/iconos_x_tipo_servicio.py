@@ -1,0 +1,17 @@
+iconos_servicio = {
+    "Alquiler": "house",
+    "Luz": "lightbulb",
+    "Agua": "droplet",
+    "Gas": "fire",
+    "Internet": "wifi",
+    "Seguro médico": "heart",
+    "Medicamentos": "capsule",
+    "Gimnasio": "dumbbell",
+    "Comidas": "utensils",
+    "Bebidas": "glass",
+    "Netflix": "play-circle",
+    "Spotify": "music-note",
+    "Gasolina": "fuel-pump",
+    "Transporte público": "bus",
+    "Mantenimiento del vehículo": "tools",
+}
