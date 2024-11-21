@@ -11,11 +11,12 @@ from ..logics.gastos_fijos import Gestor_gastos_fijos
 
 class Navigation:
     def __init__(self) -> None:
-        self._init_title = "Gestion de perfil"
+        self._init_title = "Gestion de Perfil"
 
         self._menu_handlers = {
             "Mi perfil": self._handle_Gestion_de_perfil,
-            "Gastos fijos": self._handle_Gastos_fijos,
+            "Gastos Fijos": self._handle_Gastos_fijos,
+            "Gastos Imprevistos": None,
             "Cerrar sesión": self.logout,
         }
 
@@ -25,11 +26,12 @@ class Navigation:
 
         with st.sidebar:
             option = option_menu(
-                "Main Menu",
+                "Menú",
                 self._options,
                 icons=[
                     "person-circle",
                     "bag-fill",
+                    "money",
                     "box-arrow-left",
                 ],
                 menu_icon="brilliance",

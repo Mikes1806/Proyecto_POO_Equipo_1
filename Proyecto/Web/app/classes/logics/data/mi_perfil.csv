@@ -1,1 +1,2 @@
-nombre_user,ID_user,monto_mensual,edad,telefono,correo_electronico
+nombre_user,edad,telefono,correo_electronico,monto_mensual,monto_mensual_extra
+misa,18,55719267,MISA931@GMAIL.COM,8000,300

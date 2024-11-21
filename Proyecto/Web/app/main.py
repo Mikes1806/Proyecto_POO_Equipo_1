@@ -18,7 +18,7 @@ class App:
             self.show_page()
         else:
 
-            st.title("Sistema De Login")
+            st.title("EcoFinanzas")
 
             username = st.text_input("Nombre de usuario")
             password = st.text_input("Contraseña", type="password")
