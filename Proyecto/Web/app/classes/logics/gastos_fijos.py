@@ -12,11 +12,11 @@ class Gestor_gastos_fijos:
     def logic(self) -> None:
         try:
             df_gastos_fijos = pd.read_csv("/usr/src/app/app/classes/logics/data/Controldegastos/data_gastos_fijos.csv")
-            st.subheader("Gastos fijos")
-            st.dataframe(df_gastos_fijos)
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.divider()
-            st.markdown("<br>", unsafe_allow_html=True)
+            #st.subheader("Gastos fijos")
+            #st.dataframe(df_gastos_fijos)
+            #st.markdown("<br>", unsafe_allow_html=True)
+            #st.divider()
+            #st.markdown("<br>", unsafe_allow_html=True)
             if df_gastos_fijos.empty:
                 self._add_gastos(df_gastos_fijos)
             else:
@@ -134,7 +134,7 @@ class Gestor_gastos_fijos:
             st.write("")
 
     def _modify_gastos(self, df_gastos_fijos):
-        st.subheader("Modificar Gastos Existentes")
+        #st.subheader("Modificar Gastos Existentes")
         if not df_gastos_fijos.empty:
             selected_index = st.selectbox(
                 "Selecciona el número del gasto a modificar", df_gastos_fijos.index

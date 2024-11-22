@@ -12,11 +12,11 @@ class Gestorperfil:
     def logic(self) -> None:
         try:
             df_mi_pefil = pd.read_csv("/usr/src/app/app/classes/logics/data/mi_perfil.csv")
-            st.subheader("Perfil")
-            st.dataframe(df_mi_pefil)
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.divider()
-            st.markdown("<br>", unsafe_allow_html=True)
+            #st.subheader("Perfil")
+            #st.dataframe(df_mi_pefil)
+            #st.markdown("<br>", unsafe_allow_html=True)
+            #st.divider()
+            #st.markdown("<br>", unsafe_allow_html=True)
             if df_mi_pefil.empty:
                 self._add_info(df_mi_pefil)
             else:
@@ -179,7 +179,7 @@ class Gestorperfil:
             self._eliminar_perfil(df_mi_perfil)
 
     def _modify_row(self, df_mi_perfil:list) -> None:
-        st.subheader("Modificar mi información")
+        #st.subheader("Modificar mi información")
         col1, col2 = st.columns(2)
         if not df_mi_perfil.empty:
             selected_index = 0
