@@ -138,7 +138,7 @@ class Gestor_gastos_fijos:
         if not df_gastos_fijos.empty:
             selected_index = st.selectbox(
                 "Selecciona el número del gasto a modificar", df_gastos_fijos.index
-            ) + 1
+            ) 
 
             if selected_index is not None:
 
