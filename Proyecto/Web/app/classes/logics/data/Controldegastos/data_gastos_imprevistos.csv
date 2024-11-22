@@ -1,1 +1,3 @@
-Categoría,Servicio,Gasto mensual,Descripción,Comentario
+Categoría,Servicio,Gasto mensual,Descripción,Comentario,Categoria
+,Seguro medico,8000,Plan de seguro de salud,chi,Salud
+,Netflix,400,Suscripción mensual de streaming,,Entretenimiento
