@@ -2,18 +2,14 @@ import streamlit as st
 
 
 class Login:
-    def __init__(self, username, password) -> None:
+
+    def __init__(self, username:str, password:str) -> None:
         self._username = username
         self._password = password
         self._users = {"u": "1"}
 
-    def validation_credentials(
-        self,
-    ):
-
-        if (self._username in self._users) and (
-            self._users[self._username] == self._password
-        ):
+    def validation_credentials(self) -> bool:
+        if (self._username in self._users) and (self._users[self._username] == self._password):
             return True
         else:
             return False
