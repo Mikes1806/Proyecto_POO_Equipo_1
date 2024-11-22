@@ -8,11 +8,6 @@ class Gestor_generador_reporte:
         pass
 
     def logic(self) -> None:
-        
-
-        import streamlit as st
-        import pandas as pd
-
         # Cargar los datos desde cada archivo CSV
         ruta_necesidades = '/usr/src/app/app/classes/logics/data/Controldegastos/data_gastos_fijos.csv'
         ruta_deseos = '/usr/src/app/app/classes/logics/data/Controldegastos/data_gastos_imprevistos.csv'
@@ -64,4 +59,26 @@ class Gestor_generador_reporte:
         st.write(f"¿Cumple con el 50% en Necesidades?: {'¡Sí, vas por buen Camino!' if cumple_necesidades else 'No, recuerda tus Prioridades'}")
         st.write(f"¿Cumple con el 30% en Deseos?: {'¡Sí, vas por buen Camino!' if cumple_deseos else 'No, recuerda tus Prioridades'}")
         st.write(f"¿Cumple con el 20% en Ahorros?: {'¡Sí, vas por buen Camino!' if cumple_ahorros else 'No, recuerda tus Prioridades'}")
-        st.title("Presiona aqui para descargar tú balance")
+
+        # Crear un DataFrame con la información que quieres exportar
+        data = {
+            'Categoria': ['Necesidades', 'Deseos', 'Ahorros'],
+            'Gasto Total': [suma_necesidades, suma_deseos, suma_ahorros],
+            'Recomendado': [necesidades_recomendadas, deseos_recomendados, ahorros_recomendados],
+            'Cumple con la Regla': [
+                'Si' if cumple_necesidades else 'No',
+                'Si' if cumple_deseos else 'No',
+                'Si' if cumple_ahorros else 'No'
+            ]
+        }
+        
+        df_balance = pd.DataFrame(data)
+
+        # Descargar el archivo CSV
+        st.title("Presiona aquí para descargar tu balance")
+        st.download_button(
+            label="Descargar Balance como CSV",
+            data=df_balance.to_csv(index=False).encode('utf-8'),
+            file_name='balance_gastos.csv',
+            mime='text/csv'
+        )
