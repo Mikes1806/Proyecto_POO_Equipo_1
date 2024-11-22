@@ -6,6 +6,7 @@ from streamlit_option_menu import option_menu
 from ..logics.gestor_perfil import Gestorperfil
 from ..logics.gastos_fijos import Gestor_gastos_fijos
 from ..logics.gastos_imprevistos import Gestor_gastos_imprevistos
+from ..logics.reporte import Reporte
 
 
 class Navigation:
@@ -16,6 +17,7 @@ class Navigation:
             "Mi perfil": self._handle_Gestion_de_perfil,
             "Gastos Fijos": self._handle_Gastos_fijos,
             "Gastos Imprevistos": self._handle_Gastos_imprevistos,
+            "Reporte": self._handle_Reporte,
             "Cerrar sesión": self.logout,
         }
         self._options = list(self._menu_handlers.keys())
@@ -52,6 +54,11 @@ class Navigation:
         st.title("Gastos imprevistos")
         with st.spinner("Wait for it..."):
             Gestor_gastos_imprevistos().logic()
+
+    def _handle_Reporte(self) -> None:
+        st.title("Reporte Personal")
+        with st.spinner("Wait for it..."):
+            Reporte().logic()
 
     def logout(self) -> None:
         st.session_state["logged_in"] = False
