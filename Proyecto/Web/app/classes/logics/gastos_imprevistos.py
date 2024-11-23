@@ -12,11 +12,6 @@ class Gestor_gastos_imprevistos:
     def logic(self) -> None:
         try:
             df_gastos_imprevistos = pd.read_csv("/usr/src/app/app/classes/logics/data/Controldegastos/data_gastos_imprevistos.csv")
-            st.subheader("Gastos Imprevistos")
-            st.dataframe(df_gastos_imprevistos)
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.divider()
-            st.markdown("<br>", unsafe_allow_html=True)
             if df_gastos_imprevistos.empty:
                 self._add_gastos(df_gastos_imprevistos)
             else:
@@ -109,7 +104,7 @@ class Gestor_gastos_imprevistos:
                     <p style='color: white;'> Número de Gasto: {n_gasto}</p>
                     <p style='color: white;'> Servicio: {tipo_servicio}</p>
                     <p style='color: white;'> Descripción: {descripcion}</p>
-                    <p style='color: white;'> Costo: {costo}</p>
+                    <p style='color: white;'> Costo: ${costo}</p>
                 </div>
                 """,
                 unsafe_allow_html=True

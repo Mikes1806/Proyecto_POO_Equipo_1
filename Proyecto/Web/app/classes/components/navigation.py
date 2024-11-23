@@ -31,6 +31,7 @@ class Navigation:
                     "person-circle",
                     "credit-card",
                     "bag-fill",
+                    "ticket",
                     "box-arrow-left",
                 ],
                 menu_icon="brilliance",
@@ -57,8 +58,7 @@ class Navigation:
 
     def _handle_Reporte(self) -> None:
         st.title("Reporte Personal")
-        with st.spinner("Wait for it..."):
-            Reporte().logic()
+        Reporte().logic()
 
     def logout(self) -> None:
         st.session_state["logged_in"] = False

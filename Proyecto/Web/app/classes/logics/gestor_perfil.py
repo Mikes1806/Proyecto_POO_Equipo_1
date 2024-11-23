@@ -12,11 +12,6 @@ class Gestorperfil:
     def logic(self) -> None:
         try:
             df_mi_pefil = pd.read_csv("/usr/src/app/app/classes/logics/data/mi_perfil.csv")
-            st.subheader("Perfil")
-            st.dataframe(df_mi_pefil)
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.divider()
-            st.markdown("<br>", unsafe_allow_html=True)
             if df_mi_pefil.empty:
                 self._add_info(df_mi_pefil)
             else:

@@ -12,11 +12,6 @@ class Gestor_gastos_fijos:
     def logic(self) -> None:
         try:
             df_gastos_fijos = pd.read_csv("/usr/src/app/app/classes/logics/data/Controldegastos/data_gastos_fijos.csv")
-            st.subheader("Gastos Fijos")
-            st.dataframe(df_gastos_fijos)
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.divider()
-            st.markdown("<br>", unsafe_allow_html=True)
             if df_gastos_fijos.empty:
                 self._add_gastos(df_gastos_fijos)
             else:
@@ -130,7 +125,7 @@ class Gestor_gastos_fijos:
                     <p style='color: white;'> Número de Gasto: {n_gasto}</p>
                     <p style='color: white;'> Servicio: {tipo_servicio}</p>
                     <p style='color: white;'> Descripción: {descripcion}</p>
-                    <p style='color: white;'> Gasto Mensual: {gasto_mensual}</p>
+                    <p style='color: white;'> Gasto Mensual: ${gasto_mensual}</p>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -212,7 +207,7 @@ class Gestor_gastos_fijos:
                         df_gastos_fijos = df_gastos_fijos.reset_index(drop=True)
                         df_gastos_fijos.to_csv(csv_file, index=False)
                         st.success("Gasto eliminado exitosamente.")
-                        time.sleep(3) 
+                        time.sleep(3)
                         st.experimental_rerun()
         else:
             st.error("No existen gastos disponibles para modificar.")
