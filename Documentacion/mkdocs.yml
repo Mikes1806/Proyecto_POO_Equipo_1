@@ -1,4 +1,4 @@
-site_name: Programación orientada a objetos / Fes Acatlan UNAM
+site_name: Programación Orientada a Objetos / Fes Acatlan UNAM
 site_url: https://example.com/
 
 extra_javascript: 
@@ -11,13 +11,11 @@ extra_css:
 
 nav:
   - Home: index.md
-  - EJEMPLO:
-    - Introduccion del Problema: EJEMPLO/Introduccion.md
-    - Planteamiento del Problema: EJEMPLO/Desarrollo.md
-    - Conclusion del Problema: EJEMPLO/Conclusion.md
+  - OrganizeMe (Equipo 1):
+    - Introducción: Equipo_1/Introduccion.md
+    - Desarrollo: Equipo_1/Desarrollo.md
+    - Conclusión: Equipo_1/Conclusion.md  
 
-  - Equipo 1:
-    - Prueba: Equipo_1/Prueba.md   
 theme:
   scheme: default
   name: material
@@ -38,8 +36,6 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-
-
 
 plugins:  
   - search
