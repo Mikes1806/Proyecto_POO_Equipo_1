@@ -46,6 +46,9 @@ class Reporte:
                 unsafe_allow_html=True
             )
             st.write("")
+            if float(total_gastos_fijos)/float(total_monto_mensual)*100 > 50:
+                st.warning("Sobrepasate el 50% de gastos fijos, deberías eliminar alguno.")
+            st.write("")
             st.write("")
             if st.download_button(
                 label = "Descargar Reporte",
@@ -81,6 +84,9 @@ class Reporte:
                 unsafe_allow_html=True
             )
             st.write("")
+            if float(total_gastos_imprevistos)/float(total_monto_mensual)*100 > 30:
+                st.warning("Sobrepasate el 30% de gastos imprevistos, deberías disminuirlos para el siguiente mes.")
+            st.write("")
             st.write("")
             if st.download_button(
                 label = "Descargar Reporte",
@@ -115,4 +121,6 @@ class Reporte:
                 """,
                 unsafe_allow_html=True
             )
-  
+            st.write("")
+            if float(disponibilidad)/float(total_monto_mensual)*100 < 20:
+                st.warning("Reduce los gastos para tener disponible el 20%.")
